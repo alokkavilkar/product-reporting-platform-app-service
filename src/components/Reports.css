@@ -1,0 +1,195 @@
+/* Container Layout */
+.reports-container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reports-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+/* Reports Grid */
+.reports-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Individual Report Card */
+.report-card {
+  background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.report-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Header Section: Product + Status */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.report-header h3 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+  color: #1a1a1a;
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Status Badge */
+.status-badge {
+  font-weight: 700;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.status-badge.open {
+  background-color: #d32f2f;
+}
+
+.status-badge.closed,
+.status-badge.resolved {
+  background-color: #2e7d32;
+}
+
+/* Description & Date */
+.report-desc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.report-date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #111;
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 10px;
+  margin: 1rem 0;
+  object-fit: contain;
+  max-height: 320px;
+}
+
+/* Remarks Textarea */
+.remarks-input {
+  width: 100%;
+  min-height: 90px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
+
+.cancel-btn,
+.resolve-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cancel-btn {
+  background: #ccc;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #bbb;
+}
+
+.resolve-btn {
+  background: #2e7d32;
+  color: white;
+}
+
+.resolve-btn:hover {
+  background: #1b5e20;
+}
+
+/* Loader */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 3rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

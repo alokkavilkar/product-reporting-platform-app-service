@@ -1,0 +1,124 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 111px;
+  background-color: #1e1e2f;
+  color: white;
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment of links and avatar */
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links li a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #007bff;
+}
+
+.link-button,
+.navbar-links li button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.link-button:hover,
+.navbar-links li button:hover {
+  color: #00c9a7;
+}
+
+/* Avatar Image */
+.dummy-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+  position: relative;
+  top: 1px; /* fine-tuned alignment */
+}
+
+/* On Hover Slight Zoom */
+.dummy-avatar:hover {
+  transform: scale(1.05);
+}
+
+/* Wrapper for Avatar */
+.avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown Popup */
+.user-popup {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #2a2a40;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1001;
+  width: 200px;
+  text-align: left;
+}
+
+.user-popup p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.user-popup button {
+  background-color: #00c9a7;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  color: black;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.user-popup button:hover {
+  background-color: #00b198;
+}

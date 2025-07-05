@@ -1,0 +1,125 @@
+/* Container and Typography */
+.fault-form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.form-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.fault-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Input Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.form-group textarea {
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fdfdfd;
+  resize: none;           /* Disabled resizing */
+  height: 120px;          /* Fixed height */
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+/* Upload Button */
+.file-upload-wrapper {
+  position: relative;
+}
+
+.custom-file-button {
+  display: inline-block;
+  background-color: #ecf0f1;
+  border: 1px solid #ccc;
+  color: #2c3e50;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  width: fit-content;
+}
+
+.custom-file-button:hover {
+  background-color: #d0d7de;
+}
+
+.custom-file-button input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.selected-file-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  word-break: break-word;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+.submit-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Feedback messages */
+.form-error {
+  color: #e74c3c;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.form-success {
+  color: #2ecc71;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}

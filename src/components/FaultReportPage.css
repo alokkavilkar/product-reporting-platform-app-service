@@ -1,0 +1,23 @@
+.report-page-container {
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.back-button {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #d0d7de;
+  color: #000;
+}

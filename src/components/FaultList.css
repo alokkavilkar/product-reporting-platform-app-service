@@ -1,0 +1,130 @@
+.fault-list {
+  max-width: 960px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 1rem;
+}
+
+.fault-list h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.fault-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.fault-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.fault-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.fault-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  color: #34495e;
+}
+
+.fault-card p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.status-fail {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.status-pass {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.empty-message {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* Loader (spinner) */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 3rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-box {
+  background: rgba(255, 255, 255, 0.7); /* semi-transparent white */
+  backdrop-filter: blur(10px);         /* optional glassmorphism */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #222;                         /* dark text */
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 5rem auto;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.error-box h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #111;
+}
+
+.error-box p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.error-box button {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.error-box button:hover {
+  background-color: #444;
+}
+
