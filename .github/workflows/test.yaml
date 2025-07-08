@@ -40,5 +40,6 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           projectBaseDir: .
+        environment: development-pdi
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
