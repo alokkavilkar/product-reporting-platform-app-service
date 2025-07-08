@@ -47,7 +47,7 @@ jobs:
         uses: snyk/actions/node@master
         continue-on-error: true
         env:
-          SNYK_TOKEN: ${{ secrets.SYNK }}
+          SNYK_TOKEN: ${{ secrets.SYNK_TOKEN }}
         with:
           command: test
 
