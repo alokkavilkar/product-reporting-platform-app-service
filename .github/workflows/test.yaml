@@ -1,9 +1,9 @@
-name: React CI with Jest
+name: PDI application CI pipeline
 
 on: [push, pull_request]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
@@ -25,3 +25,20 @@ jobs:
         with:
           name: coverage-report
           path: coverage/
+
+      # used self hosted sonar qube server
+      # - name: SonarQube Scan
+      #   uses: SonarSource/sonarqube-scan-action@v2.0.2
+      #   with:
+      #     projectBaseDir: .
+      #   environment: development-pdi
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          projectBaseDir: .
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
