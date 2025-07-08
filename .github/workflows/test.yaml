@@ -1,6 +1,12 @@
 name: PDI application CI pipeline
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - qa
+  pull_request:
+    branches:
+      - qa
 
 jobs:
   test:
@@ -18,6 +24,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run lint for project code quality
+        run: |
+          npm run lint:report || true
+
+      - name: Upload Lint reports
+        uses: actions/upload-artifact@v4
+        with: 
+          name: lint-report
+          path: eslint-report.html
+
       - name: Run tests with coverage
         run: npm test -- --coverage
 
@@ -26,6 +42,15 @@ jobs:
         with:
           name: coverage-report
           path: coverage/
+
+      - name: Snyk Dependency Scan
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: test
+
 
       # used self hosted sonar qube server
       # - name: SonarQube Scan

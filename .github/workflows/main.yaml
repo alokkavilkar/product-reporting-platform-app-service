@@ -1,0 +1,48 @@
+name: PDI-APP CI Workflow [main]
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: production-pdi
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: SonarCloud scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          projectBaseDir: .
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Snyk Monitor
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: monitor
+
+
+      # - name: Build Docker image
+      #   run: |
+      #     docker build -t your-org/pdi-frontend:${{ github.sha }} .
+
+      # - name: Push Docker image
+      #   env:
+      #     DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      #     DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+      #   run: |
+      #     echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
+      #     docker push your-org/pdi-frontend:${{ github.sha }}
