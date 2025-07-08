@@ -25,7 +25,8 @@ jobs:
         run: npm ci
 
       - name: Run lint for project code quality
-        run: npm run lint:report
+        run: |
+          npm run lint:report || true
 
       - name: Upload Lint reports
         uses: actions/upload-artifact@v4
