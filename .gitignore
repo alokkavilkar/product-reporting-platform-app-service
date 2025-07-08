@@ -10,6 +10,8 @@
 
 # production
 /build
+artifact.yaml
+eslint-report.html
 
 # misc
 .DS_Store

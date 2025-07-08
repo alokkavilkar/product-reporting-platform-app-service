@@ -21,7 +21,8 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "eject": "react-scripts eject",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "lint:report": "eslint \"**/*.{js,jsx}\" --format html -o eslint-report.html"
   },
   "eslintConfig": {
     "extends": [
