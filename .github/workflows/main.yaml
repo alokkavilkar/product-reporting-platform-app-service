@@ -27,6 +27,14 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      - name: Snyk Monitor
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: monitor
+
+
       # - name: Build Docker image
       #   run: |
       #     docker build -t your-org/pdi-frontend:${{ github.sha }} .
