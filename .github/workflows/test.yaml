@@ -45,9 +45,9 @@ jobs:
 
       - name: Snyk Dependency Scan
         uses: snyk/actions/node@master
-        continue-on-error: true  # Optional: don’t fail the job
+        continue-on-error: true
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.SYNK }}
         with:
           command: test
 
