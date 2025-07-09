@@ -48,4 +48,4 @@ jobs:
           DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
         run: |
           echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
-          docker push your-org/pdi-frontend:${{ github.sha }}
+          docker push ${{ secrets.DOCKER_NAMESPACE }}/${{ secrets.DOCKER_IMAGE_PDI }}:${{ github.sha }}
