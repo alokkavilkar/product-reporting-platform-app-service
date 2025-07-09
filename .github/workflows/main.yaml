@@ -38,14 +38,6 @@ jobs:
           command: monitor
 
 
-      # - name: Build Docker image
-      #   run: |
-      #     docker build -t your-org/pdi-frontend:${{ github.sha }} .
-
-      # - name: Push Docker image
-      #   env:
-      #     DOCKER_USER: ${{ secrets.DOCKER_USER }}
-      #     DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
-      #   run: |
-      #     echo "${DOCKER_PASS}" | docker login -u "${DOCKER_USER}" --password-stdin
-      #     docker push your-org/pdi-frontend:${{ github.sha }}
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKER_NAMESPACE }}/${{ secrets.DOCKER_IMAGE}}:${{ github.sha }} -f Dockerfile .

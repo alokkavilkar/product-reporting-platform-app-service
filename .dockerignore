@@ -1,0 +1,15 @@
+node_modules
+coverage
+eslint-report.html
+.env
+sonar-project.properties
+.github
+artifact.yaml
+__mocks__
+*.log
+*.swp
+.DS_Store
+*.iml
+README.md
+Dockerfile
+.dockerignore
