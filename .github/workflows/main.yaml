@@ -40,4 +40,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_NAMESPACE }}/${{ secrets.DOCKER_IMAGE}}:${{ github.sha }} -f Dockerfile .
+          docker build -t ${{ secrets.DOCKER_NAMESPACE }}/${{ secrets.DOCKER_IMAGE_PDI }}:${{ github.sha }} -f Dockerfile .
